@@ -17,7 +17,8 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_DIR = ROOT / "Data"
+# Use output/ to avoid conflict with any placeholder "Data" file in the repo
+DATA_DIR = ROOT / "output"
 DATA_DIR.mkdir(exist_ok=True)
 
 
@@ -137,8 +138,8 @@ def main() -> None:
     print(f"Saved clean data → {clean_path}")
     business_insights(clean_df)
     print("\nNext steps for a full portfolio version:")
-    print("  - Load sales_clean.csv into Power BI / Excel")
-    print("  - Add SQL scripts under Sql/")
+    print("  - Load output/sales_clean.csv into Power BI / Excel")
+    print("  - Use sample_business_questions.sql for SQL practice")
     print("  - Export dashboard screenshots to Images/")
 
 
