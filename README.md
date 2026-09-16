@@ -1,46 +1,58 @@
 # Sales Performance Analytics Dashboard
 
-End-to-end retail sales analytics project: cleaning, exploratory analysis, SQL business questions, and interactive Power BI dashboards.
+End-to-end retail sales analytics: generate data, clean it, and answer core business questions with Python.
 
 **Author:** Oguma Eluanatein Odo
 
 ---
 
+## Quick Start (anyone can run this)
+
+```bash
+git clone https://github.com/eluan216/sales-performance-dashboard.git
+cd sales-performance-dashboard
+pip install -r requirements.txt
+python src/generate_and_analyze.py
+```
+
+This will:
+
+1. Generate synthetic retail sales data
+2. Clean and validate it
+3. Save CSVs under `Data/`
+4. Print revenue/profit by region, category, top products, top customers, and monthly trend
+
+No external dataset required.
+
+---
+
 ## Project Overview
 
-Businesses generate large volumes of transactional data every day. This project turns raw retail sales data into actionable insights across revenue, profitability, customers, products, and regions.
+Businesses generate large volumes of transactional data. This project demonstrates the analytics lifecycle:
 
-It follows the full analytics lifecycle:
-
-1. Data collection & ingestion
-2. Data cleaning & validation
-3. Exploratory Data Analysis (EDA)
-4. SQL-based business analysis
-5. Interactive dashboard development (Power BI)
-6. Clear business recommendations
+1. Data generation / ingestion
+2. Cleaning & validation
+3. Business analysis (region, category, customers, trends)
+4. Export of analysis-ready CSVs for Excel / Power BI
 
 ---
 
 ## Business Questions Answered
 
-- Which region generates the highest sales and profit?
-- Which product categories and individual products drive the most revenue?
-- Who are the top customers by revenue?
-- How do sales trend over time (monthly / seasonal patterns)?
-- Where should the business invest more (or less) attention?
+- Which region generates the highest sales?
+- Which categories and products drive revenue and profit?
+- Who are the top customers?
+- How do sales trend month by month?
 
 ---
 
 ## Tech Stack
 
-| Layer              | Tools                          |
-|--------------------|--------------------------------|
-| Data cleaning      | Python, Pandas, NumPy          |
-| Analysis & EDA     | Python, Matplotlib, Seaborn    |
-| Business queries   | SQL (SQLite)                   |
-| Spreadsheet work   | Microsoft Excel                |
-| Visualization      | Power BI                       |
-| Version control    | Git & GitHub                   |
+| Layer         | Tools                |
+|---------------|----------------------|
+| Pipeline      | Python, Pandas, NumPy |
+| Visualization | Matplotlib, Seaborn, Power BI (optional) |
+| Spreadsheet   | Excel (load the CSVs) |
 
 ---
 
@@ -48,50 +60,26 @@ It follows the full analytics lifecycle:
 
 ```text
 sales-performance-dashboard/
-├── Data/          # Raw and cleaned datasets
-├── Notebooks/     # EDA and analysis notebooks
-├── Sql/           # SQL scripts for business questions
-├── Src/           # Python cleaning / transformation scripts
-├── Dashboard/     # Power BI files or exports
-├── Images/        # Dashboard screenshots & charts
-├── Reports/       # Summary findings
+├── Data/                      # Generated raw + clean CSVs
+├── src/
+│   └── generate_and_analyze.py
+├── Sql/                       # Optional SQL examples
+├── Notebooks/                 # Optional notebooks
+├── Dashboard/                 # Power BI files (add your own)
+├── Images/                    # Screenshots
+├── requirements.txt
 └── README.md
 ```
 
-> Note: Populate the folders with your cleaned data, notebooks, SQL scripts, and Power BI screenshots so visitors can follow the full workflow.
-
 ---
 
-## How to Explore
+## Optional next steps
 
-1. Review the **Notebooks** for cleaning steps and EDA.
-2. Run or inspect the **SQL** scripts for key business metrics.
-3. Open the **Dashboard** / Power BI file (or view screenshots in **Images**).
-4. Read the **Reports** folder for summarized insights and recommendations.
+After running the script:
 
----
-
-## Key Deliverables
-
-- Cleaned, analysis-ready sales dataset
-- EDA notebook with clear visual findings
-- SQL queries answering core business questions
-- Interactive Power BI dashboard with:
-  - Total Revenue & Profit KPIs
-  - Sales by Region
-  - Sales Trend over time
-  - Profit by Category
-  - Top Customers & Top Products
-  - Interactive filters
-
----
-
-## Future Improvements
-
-- Sales forecasting with time-series models
-- Customer segmentation (RFM or clustering)
-- Inventory / stock-out risk indicators
-- Automated refresh pipeline
+1. Open `Data/sales_clean.csv` in Excel or Power BI
+2. Build KPIs: Total Revenue, Total Profit, Sales by Region, Trend, Top Products
+3. Add dashboard screenshots under `Images/`
 
 ---
 
